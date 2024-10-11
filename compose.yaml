@@ -1,0 +1,18 @@
+services:
+  db:
+    container_name: mysql
+    image: "mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=D@ftp21nk
+
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PROFILE=dev
+      - DATABASE_URL=jdbc:mysql://bd-dev-fiap-api.mysql.database.azure.com:3306/api?createDatabaseIfNotExist=true
+      - DATABASE_USER=fiap
+      - DATABASE_PWD=D@ftp21nk
