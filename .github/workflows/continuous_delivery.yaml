@@ -63,5 +63,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.PRODUCTION_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_PRODUCTION_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZURE_PROFILE }}
           images: '${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest'
